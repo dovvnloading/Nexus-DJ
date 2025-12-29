@@ -5,8 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      // Set base to repo name for production (GitHub Pages) and root for dev
-      base: mode === 'production' ? '/nexus-dj/' : '/',
+      // Use relative paths to ensure assets load regardless of repo name capitalization (Nexus-DJ vs nexus-dj)
+      base: './',
       server: {
         port: 3000,
         host: '0.0.0.0',
